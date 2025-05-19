@@ -1,6 +1,6 @@
 {
-  "name": "unkflix-frontend",
-  "version": "0.0.0",
+  "name": "unkflix",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
