@@ -117,6 +117,55 @@
   height: 50px;
   border-radius: 8px;
   object-fit: cover;
+  cursor: pointer;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+.avatar-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #232323;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 10px;
+  display: none;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.avatar-menu.active {
+  display: block;
+}
+
+.avatar-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px;
+}
+
+.avatar-menu a i {
+  font-size: 18px;
+  color: #e50914;
+}
+
+.avatar-menu a:hover {
+  background-color: #333;
+}
+
+.avatar-menu a:hover i {
+  transform: translateX(2px);
 }
 
 @media screen and (max-width: 1500px) {

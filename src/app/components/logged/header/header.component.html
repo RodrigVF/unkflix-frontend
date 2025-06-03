@@ -24,6 +24,14 @@
         <span>Pesquisar</span>
       </span>
     </div>
-    <img src="/avatar.png" alt="Avatar" class="avatar" />
+    <div class="avatar-container">
+      <img src="/avatar.png" alt="Avatar" class="avatar" (click)="toggleAvatarMenu($event)" />
+      <div class="avatar-menu" [class.active]="isAvatarMenuOpen">
+        <a (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i>
+          Sair
+        </a>
+      </div>
+    </div>
   </div>
 </div>

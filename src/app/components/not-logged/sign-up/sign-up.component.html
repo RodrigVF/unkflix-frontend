@@ -1,18 +1,44 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
   <div class="bg-dark bg-opacity-75 rounded-4 py-5" style="max-width: 480px; width: 100%; padding-left: 3.5rem; padding-right: 3.5rem; transform: translateY(-25%);">
     <h2 class="text-white text-center mb-4 fw-bold">Cadastre-se</h2>
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div style="margin-bottom: 1.25rem;">
-        <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Seu nome completo" required>
+        <input type="text" formControlName="name" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Seu nome completo" required>
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="text-danger mt-1">
+          <small *ngIf="registerForm.get('name')?.errors?.['required']">Nome é obrigatório</small>
+          <small *ngIf="registerForm.get('name')?.errors?.['minlength']">Nome deve ter no mínimo 3 caracteres</small>
+        </div>
       </div>
       <div style="margin-bottom: 1.25rem;">
-        <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Seu melhor e-mail" required>
+        <input type="email" formControlName="email" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Seu melhor e-mail" required>
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger mt-1">
+          <small *ngIf="registerForm.get('email')?.errors?.['required']">Email é obrigatório</small>
+          <small *ngIf="registerForm.get('email')?.errors?.['email']">Email inválido</small>
+        </div>
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Sua senha" required>
+        <input type="password" formControlName="password" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Sua senha" required>
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger mt-1">
+          <small *ngIf="registerForm.get('password')?.errors?.['required']">Senha é obrigatória</small>
+          <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Senha deve ter no mínimo 4 caracteres</small>
+        </div>
       </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger text-center mb-3">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="successMessage" class="alert alert-success text-center mb-3" [innerHTML]="successMessage">
+      </div>
+
       <div class="d-grid mb-4 mt-3">
-        <button type="submit" class="btn btn-danger btn-lg fw-bold py-3">Cadastrar conta</button>
+        <button type="submit" [disabled]="registerForm.invalid || isLoading" class="btn btn-danger btn-lg fw-bold py-3">
+          <span *ngIf="!isLoading">Cadastrar conta</span>
+          <span *ngIf="isLoading">
+            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            Cadastrando...
+          </span>
+        </button>
       </div>
       <div class="text-center">
         <span class="text-white-50">Já tem uma conta? </span>
