@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 600px;
   min-width: 280px;
+  height: 300px; /* Fixed height */
   position: relative;
   margin: 16px;
   display: flex;
@@ -40,12 +41,23 @@
   font-weight: 700;
   margin-bottom: 10px;
   color: #fff;
+  /* Prevent title from taking too much space */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .movie-desc {
   font-size: clamp(0.9rem, 2.5vw, 1.05rem);
   color: #e0e0e0;
   margin-bottom: 20px;
+  /* Limit description to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
 }
 
 .movie-info {
@@ -64,11 +76,28 @@
   color: #e50914;
 }
 
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-tag {
+  background: #333;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
 .movie-provider {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   align-items: center;
-  justify-content: center;
-  margin-top: 8px;
+  justify-content: flex-start;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 8px;
 }
 
 .provider {
@@ -79,7 +108,6 @@
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-weight: 600;
   letter-spacing: 1px;
-  margin-top: 8px;
 }
 
 .provider.netflix {
@@ -87,18 +115,8 @@
   color: #fff;
 }
 
-.provider.claro {
-  background: #333;
-  color: #fff;
-}
-
-.provider.prime {
-  background: #fff;
-  color: #222;
-}
-
-.provider.ittv {
-  background: #222;
+.provider.primevideo {
+  background: #00a8e1;
   color: #fff;
 }
 

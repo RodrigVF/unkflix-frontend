@@ -1,10 +1,19 @@
+export interface Category {
+  id: number;
+  name: string;
+}
+
+export interface Streaming {
+  id: number;
+  name: string;
+}
+
 export interface Movie {
+  id: number;
   title: string;
   description: string;
-  duration: string;
-  age: string;
-  approval: string;
-  provider: 'netflix' | 'claro' | 'prime' | 'ittv' | 'appletv';
-  providerLabel: string;
-  isTop10?: boolean;
+  releaseDate: string;
+  rating: number;
+  categories: Category[];
+  streamings: Streaming[];
 }

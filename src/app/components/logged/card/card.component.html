@@ -1,21 +1,28 @@
 <div class="movie-card">
-  <div class="top10-badge" *ngIf="movie.isTop10">TOP 10</div>
+  <!-- <div class="top10-badge" *ngIf="movie.isTop10">TOP 10</div> -->
   <h2 class="movie-title">{{ movie.title }}</h2>
   <p class="movie-desc">{{ movie.description }}</p>
   <div class="movie-info">
-    <span><i class="bi bi-clock"></i> {{ movie.duration }}</span>
-    <span><i class="bi bi-exclamation-triangle"></i> {{ movie.age }}</span>
+    <span><i class="bi bi-calendar"></i> {{ movie.releaseDate }}</span>
     <span
       [ngClass]="{
-        'approval-good': +movie.approval.replace('%','') > 60,
-        'approval-medium': +movie.approval.replace('%','') >= 30 && +movie.approval.replace('%','') <= 60,
-        'approval-bad': +movie.approval.replace('%','') < 30
+        'approval-good': +movie.rating > 6,
+        'approval-medium': +movie.rating >= 4 && +movie.rating<= 6,
+        'approval-bad': +movie.rating < 4
       }"
     >
-      <i class="bi bi-heart-fill"></i> {{ movie.approval }} Aprovação
+      <i class="bi bi-heart-fill"></i> {{ movie.rating }}/10 Aprovação
+    </span>
+    <span class="categories">
+      <i class="bi bi-tags"></i>
+      <span *ngFor="let category of movie.categories" class="category-tag">
+        {{ category.name }}
+      </span>
     </span>
   </div>
   <div class="movie-provider">
-    <span class="provider" [ngClass]="movie.provider">{{ movie.providerLabel }}</span>
+    <span *ngFor="let streaming of movie.streamings" class="provider" [ngClass]="streaming.name.toLowerCase()">
+      {{ streaming.name }}
+    </span>
   </div>
 </div>
