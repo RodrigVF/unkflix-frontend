@@ -1,0 +1,21 @@
+<div class="movie-card">
+  <div class="top10-badge" *ngIf="movie.isTop10">TOP 10</div>
+  <h2 class="movie-title">{{ movie.title }}</h2>
+  <p class="movie-desc">{{ movie.description }}</p>
+  <div class="movie-info">
+    <span><i class="bi bi-clock"></i> {{ movie.duration }}</span>
+    <span><i class="bi bi-exclamation-triangle"></i> {{ movie.age }}</span>
+    <span
+      [ngClass]="{
+        'approval-good': +movie.approval.replace('%','') > 60,
+        'approval-medium': +movie.approval.replace('%','') >= 30 && +movie.approval.replace('%','') <= 60,
+        'approval-bad': +movie.approval.replace('%','') < 30
+      }"
+    >
+      <i class="bi bi-heart-fill"></i> {{ movie.approval }} Aprovação
+    </span>
+  </div>
+  <div class="movie-provider">
+    <span class="provider" [ngClass]="movie.provider">{{ movie.providerLabel }}</span>
+  </div>
+</div>

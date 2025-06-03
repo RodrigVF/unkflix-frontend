@@ -1,0 +1,72 @@
+.bg-dark.bg-opacity-75 {
+  /* Garante o fundo escuro translúcido */
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.rounded-4 {
+  border-radius: 20px !important;
+}
+
+.form-control::placeholder {
+  color: #b3b3b3;
+  opacity: 1;
+}
+
+.btn-danger {
+  background-color: #E32723;
+  border: none;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #E32723;
+}
+
+.form-control {
+  color: #fff;
+  line-height: 2.2; /* deixa o campo mais alto */
+  min-height: 3.2rem;
+}
+
+a.text-danger {
+  color: #E32723 !important;
+}
+
+a.text-danger:hover {
+  text-decoration: underline;
+}
+
+.mb-3 {
+  margin-bottom: 2rem !important; /* aumenta o espaço entre os campos */
+}
+
+.d-grid.mb-2 {
+  margin-bottom: 2rem !important; /* aumenta o espaço abaixo do botão */
+}
+
+h2 {
+  margin-bottom: 2.5rem !important; /* mais espaço abaixo do título */
+  line-height: 1.2;
+}
+
+.d-flex.justify-content-center.align-items-start.vh-100 {
+  overflow: hidden;
+}
+
+.bg-dark.bg-opacity-75.rounded-4.py-5.px-4.mt-5 {
+  max-width: 400px;
+  width: 100%;
+}
+
+.d-flex.justify-content-center.vh-100 {
+  overflow: hidden;
+}
+
+.d-flex.justify-content-center.vh-100.align-items-start {
+  align-items: flex-start;
+}
+
+.d-flex.justify-content-center.vh-100.align-items-start.bg-dark.bg-opacity-75.rounded-4.py-5.px-4 {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 48px;
+}

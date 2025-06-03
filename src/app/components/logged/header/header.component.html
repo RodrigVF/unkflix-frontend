@@ -1,0 +1,29 @@
+<div id="header-container">
+  <img src="/logo.svg" alt="Unkflix Logo" class="logo"/>
+
+  <button class="mobile-menu-btn" (click)="toggleMenu()">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <div class="nav-container">
+    <nav class="nav-menu">
+      <a href="#">Início</a>
+      <a href="#">Séries</a>
+      <a href="#">Filmes</a>
+      <a href="#">Originais</a>
+      <a href="#">Novidades</a>
+      <a [routerLink]="['/novo-filme']" routerLinkActive="active">Cadastrar filme</a>
+    </nav>
+  </div>
+
+  <div class="header-right">
+    <div class="search-box">
+      <input type="text" placeholder="" />
+      <span class="search-placeholder">
+        <i class="bi bi-search"></i>
+        <span>Pesquisar</span>
+      </span>
+    </div>
+    <img src="/avatar.png" alt="Avatar" class="avatar" />
+  </div>
+</div>

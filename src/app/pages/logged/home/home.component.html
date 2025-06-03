@@ -1,0 +1,15 @@
+<app-header />
+<div style="margin-top: 100px;">
+  <a [routerLink]="['/novo-filme']" routerLinkActive="active">
+    <button class="btn btn-danger">
+      Cadastrar filme
+    </button>
+    <hr>
+  </a>
+</div>
+
+<div class="cards-fade-container mb-5">
+  <div class="cards-grid">
+    <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
+  </div>
+</div>

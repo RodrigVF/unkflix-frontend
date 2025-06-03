@@ -1,0 +1,62 @@
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; background: transparent;">
+  <img src="/logo.svg" alt="Unkflix Logo" class="logo" style="margin-top: 64px; margin-bottom: -16px; height: 10vh;"/>
+  <div class="form-wrapper rounded-4 mt-5">
+    <h2 class="text-white text-center mb-4 fw-bold" style="font-size: 2.4rem;">Cadastre seu filme aqui</h2>
+    <form>
+      <div class="row">
+        <div style="flex: 2; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div class="input-icon">
+            <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Nome do filme" required>
+          </div>
+          <div class="input-icon">
+            <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Data de lançamento" required>
+            <span class="icon-right">
+              <svg width="22" height="22" fill="none" stroke="#E32723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="4"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </span>
+          </div>
+          <div class="input-icon select-icon">
+            <select class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" required>
+              <option value="" disabled selected hidden>Aonde está disponível?</option>
+              <option>Netflix</option>
+              <option>Prime Video</option>
+              <option>Disney+</option>
+              <option>Outro</option>
+            </select>
+            <span class="icon-right">
+              <svg width="20" height="20" fill="none" stroke="#E32723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+        <div style="flex: 2; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div class="input-icon">
+            <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Descrição do filme" required>
+          </div>
+          <div class="input-icon">
+            <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Avaliação geral" required>
+            <span class="icon-right">
+              <svg width="22" height="22" fill="none" stroke="#E32723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.5 5.5 21 7 14 2 9.3 9 9"/></svg>
+            </span>
+          </div>
+          <div class="input-icon select-icon">
+            <select class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" required>
+              <option value="" disabled selected hidden>Qual categoria</option>
+              <option>Ação</option>
+              <option>Comédia</option>
+              <option>Drama</option>
+              <option>Outro</option>
+            </select>
+            <span class="icon-right">
+              <svg width="20" height="20" fill="none" stroke="#E32723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-danger btn-lg fw-bold py-3">Cadastrar filme</button>
+      </div>
+      <div class="d-grid">
+        <a [routerLink]="['/']" class="text-white text-decoration-none">Voltar</a>
+      </div>
+    </form>
+  </div>
+</div>

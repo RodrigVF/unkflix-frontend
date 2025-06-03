@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="bg-dark bg-opacity-75 rounded-4 py-5" style="max-width: 480px; width: 100%; padding-left: 3.5rem; padding-right: 3.5rem; transform: translateY(-25%);">
+    <h2 class="text-white text-center mb-4 fw-bold">Entre na sua conta</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div style="margin-bottom: 1.25rem;">
+        <input type="email" formControlName="email" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="E-mail ou número de telefone" required>
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger mt-1">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">Email é obrigatório</small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">Email inválido</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input type="password" formControlName="password" class="form-control form-control-lg bg-secondary bg-opacity-50 border-0 text-white" placeholder="Sua senha" required>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger mt-1">
+          <small *ngIf="loginForm.get('password')?.errors?.['required']">Senha é obrigatória</small>
+          <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Senha deve ter no mínimo 4 caracteres</small>
+        </div>
+      </div>
+
+      <!-- Mensagem de erro -->
+      <div *ngIf="errorMessage" class="alert alert-danger text-center mb-3">
+        {{ errorMessage }}
+      </div>
+
+      <div class="d-grid mb-4 mt-3">
+        <button type="submit" [disabled]="loginForm.invalid || isLoading" class="btn btn-danger btn-lg fw-bold py-3">
+          <span *ngIf="!isLoading">Entrar na conta</span>
+          <span *ngIf="isLoading">
+            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            Entrando...
+          </span>
+        </button>
+      </div>
+      <div class="text-center mb-3">
+        <a [routerLink]="['/cadastre-se']" routerLinkActive="active" class="text-white-50 small text-decoration-none">Esqueci minha senha</a>
+      </div>
+      <div class="text-center">
+        <span class="text-white-50">Novo por aqui? </span>
+        <a [routerLink]="['/cadastre-se']" routerLinkActive="active" class="text-danger fw-bold text-decoration-none">Assine agora</a>
+      </div>
+    </form>
+  </div>
+</div>

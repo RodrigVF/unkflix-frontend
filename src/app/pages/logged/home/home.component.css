@@ -1,0 +1,72 @@
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.cards-fade-container {
+  position: relative;
+}
+
+.cards-fade-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px; /* altura do fade, ajuste conforme necessário */
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(34,34,34,0) 0%, #090909 100%);
+  /* #090909 é o fundo da sua página, ajuste se necessário */
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px; /* ajuste conforme necessário */
+  pointer-events: none;
+  z-index: 9999;
+  background: linear-gradient(to bottom, rgba(34,34,34,0) 0%, #090909 100%);
+}
+
+.btn-danger {
+  margin-top: -100px;
+  background-color: #E32723;
+  border: none;
+  font-size: 1.28rem;
+  letter-spacing: 0.5px;
+  padding: 1.1rem 1.1rem;
+  border-radius: 10px;
+  min-width: 200px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #c01f1c;
+}
+
+/* New styles for the button container and hr */
+div[style*="margin-top: 100px"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #E32723;
+  width: 100vw;
+  margin: 10px 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
