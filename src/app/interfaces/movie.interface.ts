@@ -16,4 +16,6 @@ export interface Movie {
   rating: number;
   categories: Category[];
   streamings: Streaming[];
+  isTop10?: boolean;
+  duration?: string;
 }
