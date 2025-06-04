@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovieService } from '../../../services/movie.service';
 import { Category, Streaming } from '../../../interfaces/movie.interface';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-create-movie',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterLink, CommonModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   templateUrl: './create-movie.component.html',
   styleUrl: './create-movie.component.css'
 })
